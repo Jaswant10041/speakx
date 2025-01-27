@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package quiz;
+
+service QueryService {
+  rpc searchQuery (SearchRequest) returns (SearchResponse);
+}
+
+message SearchRequest {
+  string query = 1;
+}
+
+message SearchResponse {
+  repeated Question questions = 1;
+}
+
+message Question {
+  string id = 1;
+  string type = 2;
+  string title = 3;
+}
