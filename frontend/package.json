@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
     "cra-template": "1.2.0",
     "google-protobuf": "^3.21.4",
     "grpc-web": "^1.5.0",

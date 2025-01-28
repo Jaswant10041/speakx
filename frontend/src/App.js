@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { QueryServiceClient } from './generated/first_grpc_web_pb';
 import { SearchRequest } from './generated/first_pb';
+import './index.css'; 
 
 const client = new QueryServiceClient('http://localhost:8080');
 
@@ -23,12 +24,14 @@ function App() {
 
     return (
         <div className="App">
-            <input
-                type="text"
-                value={query}
-                onChange={e => setQuery(e.target.value)}
-                placeholder="Search questions..."
-            />
+            <div className="input-container">
+                <input
+                    type="text"
+                    value={query}
+                    onChange={e => setQuery(e.target.value)}
+                    placeholder="Search questions..."
+                />
+            </div>
             <button onClick={handleSearch}>Search</button>
             <ul>
                 {results.map(question => (

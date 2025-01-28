@@ -1,0 +1,45 @@
+/* src/index.css */
+
+.App {
+    padding: 32px; /* Equivalent to p-8 */
+}
+
+.App .input-container {
+    margin-bottom: 16px; /* Equivalent to mb-4 */
+}
+
+.App input[type="text"] {
+    border: 1px solid #e5e7eb; /* Equivalent to border */
+    border-radius: 4px; /* Equivalent to rounded */
+    padding: 8px; /* Equivalent to p-2 */
+    width: 100%; /* Equivalent to w-full */
+}
+
+.App button {
+    background-color: #3b82f6; /* Equivalent to bg-blue-500 */
+    color: white; /* Equivalent to text-white */
+    padding: 8px; /* Equivalent to p-2 */
+    border-radius: 4px; /* Equivalent to rounded */
+    transition: background-color 0.3s; /* Equivalent to transition */
+    border: none;
+    cursor: pointer;
+    align-content: center;
+}
+
+.App button:hover {
+    background-color: #6d93e5; /* Equivalent to hover:bg-blue-600 */
+}
+
+.App ul {
+    margin-top: 16px; /* Equivalent to mt-4 */
+    list-style-type: none;
+    padding: 0;
+}
+
+.App ul li {
+    padding: 8px; /* Equivalent to p-2 */
+    border: 1px solid #e5e7eb; /* Equivalent to border */
+    border-radius: 4px; /* Equivalent to rounded */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Equivalent to shadow */
+    margin-bottom: 8px; /* Equivalent to space-y-2 */
+}
