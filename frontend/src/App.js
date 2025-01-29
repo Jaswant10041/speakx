@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { QueryServiceClient } from './generated/first_grpc_web_pb';
 import { SearchRequest } from './generated/first_pb';
-import './index.css'; // Ensure Tailwind CSS is included
+
 
 const client = new QueryServiceClient('http://localhost:8080');
 
