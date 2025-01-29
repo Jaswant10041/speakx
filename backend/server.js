@@ -14,17 +14,28 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 const searchQuery = async (call, callback) => {
     const query = call.request.query;
+    const page = call.request.page || 1; 
+    const limit = call.request.limit || 10; 
+
     try {
+        const totalQuestions = await QuizModel.countDocuments({
+            title: { $regex: query, $options: 'i' }
+        });
+
         const questions = await QuizModel.find({
             title: { $regex: query, $options: 'i' }
-        }).select('title type _id');
+        })
+        .select('title type _id')
+        .skip((page - 1) * limit)
+        .limit(limit);
 
         const searchResponse = {
             questions: questions.map(q => ({
                 id: q._id.toString(),
                 type: q.type,
                 title: q.title
-            }))
+            })),
+            totalQuestions 
         };
 
         callback(null, searchResponse);

@@ -2,20 +2,23 @@ syntax = "proto3";
 
 package quiz;
 
-service QueryService {
-  rpc searchQuery (SearchRequest) returns (SearchResponse);
-}
-
 message SearchRequest {
-  string query = 1;
-}
-
-message SearchResponse {
-  repeated Question questions = 1;
+    string query = 1;
+    int32 page = 2;
+    int32 limit = 3;
 }
 
 message Question {
-  string id = 1;
-  string type = 2;
-  string title = 3;
+    string id = 1;
+    string type = 2;
+    string title = 3;
+}
+
+message SearchResponse {
+    repeated Question questions = 1;
+    int32 totalQuestions = 2; // Ensure this line is included
+}
+
+service QueryService {
+    rpc searchQuery (SearchRequest) returns (SearchResponse);
 }
